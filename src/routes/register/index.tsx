@@ -120,9 +120,9 @@ export default component$(() => {
     let isValid = false;
     
     if (currentStep.value === 1) {
-      isValid = validateStep1();
+      //isValid = validateStep1();
     } else if (currentStep.value === 2) {
-      isValid = validateStep2();
+      //isValid = validateStep2();
     }
     
     if (isValid) {
