@@ -100,13 +100,6 @@ export const Sidebar = component$<SidebarProps>(({
     return location.url.pathname === href || location.url.pathname.startsWith(href + '/');
   };
 
-  // Fix: create a serializable handler for toggle
-  const handleToggle = $(() => {
-    if (onToggle) {
-      onToggle();
-    }
-  });
-  
   return (
     <div class={`bg-white border-r border-gray-200 h-full transition-all duration-300 ${
       isCollapsed ? 'w-16' : 'w-64'
@@ -123,7 +116,7 @@ export const Sidebar = component$<SidebarProps>(({
         )}
         
         <button
-          onClick$={handleToggle}
+          onClick$={onToggle}
           class="p-1 rounded-md hover:bg-gray-100 transition-colors duration-200"
         >
           {isCollapsed ? (
