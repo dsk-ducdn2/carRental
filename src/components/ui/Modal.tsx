@@ -19,7 +19,7 @@ export const Modal = component$<ModalProps>(({
   class: className = '',
   ...props
 }) => {
-  const isAnimating = useSignal(false);
+  //const isAnimating = useSignal(false);
   
   const sizeClasses = {
     sm: 'max-w-sm',
@@ -29,24 +29,25 @@ export const Modal = component$<ModalProps>(({
     full: 'max-w-full mx-4'
   };
   
-  const handleBackdropClick = $(() => {
+  // Remove $() from handler definitions
+  const handleBackdropClick = () => {
     if (closeOnBackdrop) {
       onClose();
     }
-  });
+  };
   
-  const handleKeyDown = $((event: KeyboardEvent) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       onClose();
     }
-  });
+  };
   
   if (!isOpen) return null;
   
   return (
     <div
       class="fixed inset-0 z-50 overflow-y-auto"
-      onKeyDown$={handleKeyDown}
+      onKeyDown$={$((event: KeyboardEvent) => handleKeyDown(event))}
       role="dialog"
       aria-modal="true"
       aria-labelledby={title ? 'modal-title' : undefined}
@@ -54,7 +55,7 @@ export const Modal = component$<ModalProps>(({
       {/* Backdrop */}
       <div
         class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
-        onClick$={handleBackdropClick}
+        onClick$={$(() => handleBackdropClick())}
       />
       
       {/* Modal */}
@@ -79,7 +80,7 @@ export const Modal = component$<ModalProps>(({
                 <button
                   type="button"
                   class="text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                  onClick$={onClose}
+                  onClick$={$(() => onClose())}
                   aria-label="Close modal"
                 >
                   <svg

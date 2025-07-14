@@ -1,4 +1,4 @@
-import { component$} from '@builder.io/qwik';
+import { component$, $ } from '@builder.io/qwik';
 import { Link, useLocation } from '@builder.io/qwik-city';
 import { 
   HomeIcon,
@@ -116,7 +116,7 @@ export const Sidebar = component$<SidebarProps>(({
         )}
         
         <button
-          onClick$={onToggle}
+          onClick$={onToggle ? $(() => onToggle()) : undefined}
           class="p-1 rounded-md hover:bg-gray-100 transition-colors duration-200"
         >
           {isCollapsed ? (
