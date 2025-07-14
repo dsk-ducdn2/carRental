@@ -4,7 +4,7 @@ import { Header } from '~/components/layout/Header';
 import { Footer } from '~/components/layout/Footer';
 import { Button } from '~/components/ui/Button';
 import { Input } from '~/components/ui/Input';
-import { Card, CardHeader, CardTitle, CardBody } from '~/components/ui/Card';
+import { Card, CardBody } from '~/components/ui/Card';
 import { 
   EyeIcon, 
   EyeOffIcon, 
@@ -49,53 +49,53 @@ export default component$(() => {
     }
   });
   
-  const validateStep1 = $(() => {
-    const newErrors: Record<string, string> = {};
+  // const validateStep1 = $(() => {
+  //   const newErrors: Record<string, string> = {};
     
-    if (!formData.value.firstName) {
-      newErrors.firstName = 'Họ là bắt buộc';
-    }
+  //   if (!formData.value.firstName) {
+  //     newErrors.firstName = 'Họ là bắt buộc';
+  //   }
     
-    if (!formData.value.lastName) {
-      newErrors.lastName = 'Tên là bắt buộc';
-    }
+  //   if (!formData.value.lastName) {
+  //     newErrors.lastName = 'Tên là bắt buộc';
+  //   }
     
-    if (!formData.value.email) {
-      newErrors.email = 'Email là bắt buộc';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)) {
-      newErrors.email = 'Email không hợp lệ';
-    }
+  //   if (!formData.value.email) {
+  //     newErrors.email = 'Email là bắt buộc';
+  //   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)) {
+  //     newErrors.email = 'Email không hợp lệ';
+  //   }
     
-    if (!formData.value.phone) {
-      newErrors.phone = 'Số điện thoại là bắt buộc';
-    } else if (!/^[0-9]{10,11}$/.test(formData.value.phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'Số điện thoại không hợp lệ';
-    }
+  //   if (!formData.value.phone) {
+  //     newErrors.phone = 'Số điện thoại là bắt buộc';
+  //   } else if (!/^[0-9]{10,11}$/.test(formData.value.phone.replace(/\s/g, ''))) {
+  //     newErrors.phone = 'Số điện thoại không hợp lệ';
+  //   }
     
-    errors.value = newErrors;
-    return Object.keys(newErrors).length === 0;
-  });
+  //   errors.value = newErrors;
+  //   return Object.keys(newErrors).length === 0;
+  // });
   
-  const validateStep2 = $(() => {
-    const newErrors: Record<string, string> = {};
+  // const validateStep2 = $(() => {
+  //   const newErrors: Record<string, string> = {};
     
-    if (!formData.value.password) {
-      newErrors.password = 'Mật khẩu là bắt buộc';
-    } else if (formData.value.password.length < 8) {
-      newErrors.password = 'Mật khẩu phải có ít nhất 8 ký tự';
-    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.value.password)) {
-      newErrors.password = 'Mật khẩu phải chứa chữ hoa, chữ thường và số';
-    }
+  //   if (!formData.value.password) {
+  //     newErrors.password = 'Mật khẩu là bắt buộc';
+  //   } else if (formData.value.password.length < 8) {
+  //     newErrors.password = 'Mật khẩu phải có ít nhất 8 ký tự';
+  //   } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.value.password)) {
+  //     newErrors.password = 'Mật khẩu phải chứa chữ hoa, chữ thường và số';
+  //   }
     
-    if (!formData.value.confirmPassword) {
-      newErrors.confirmPassword = 'Xác nhận mật khẩu là bắt buộc';
-    } else if (formData.value.password !== formData.value.confirmPassword) {
-      newErrors.confirmPassword = 'Mật khẩu không khớp';
-    }
+  //   if (!formData.value.confirmPassword) {
+  //     newErrors.confirmPassword = 'Xác nhận mật khẩu là bắt buộc';
+  //   } else if (formData.value.password !== formData.value.confirmPassword) {
+  //     newErrors.confirmPassword = 'Mật khẩu không khớp';
+  //   }
     
-    errors.value = newErrors;
-    return Object.keys(newErrors).length === 0;
-  });
+  //   errors.value = newErrors;
+  //   return Object.keys(newErrors).length === 0;
+  // });
   
   const validateStep3 = $(() => {
     const newErrors: Record<string, string> = {};

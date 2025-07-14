@@ -5,13 +5,9 @@ import { Footer } from '~/components/layout/Footer';
 import { Button } from '~/components/ui/Button';
 import { CarCard } from '~/components/cars/CarCard';
 import { 
-  CheckIcon,
   ShieldIcon,
   ClockIcon,
-  MapPinIcon,
-  StarIcon,
   UsersIcon,
-  CarIcon,
   CreditCardIcon
 } from 'lucide-qwik';
 import type { Car } from '~/types';

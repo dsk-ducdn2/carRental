@@ -6,12 +6,11 @@ import {
   CarIcon,
   UsersIcon,
   FuelIcon,
-  CalendarIcon,
   MapPinIcon,
   StarIcon
 } from 'lucide-qwik';
 import type { Car } from '~/types';
-import { formatCurrency, getCarStatusColor, getInitials } from '~/utils';
+import { formatCurrency, getCarStatusColor} from '~/utils';
 
 interface CarCardProps {
   car: Car;

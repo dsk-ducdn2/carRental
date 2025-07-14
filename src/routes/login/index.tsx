@@ -4,7 +4,7 @@ import { Header } from '~/components/layout/Header';
 import { Footer } from '~/components/layout/Footer';
 import { Button } from '~/components/ui/Button';
 import { Input } from '~/components/ui/Input';
-import { Card, CardHeader, CardTitle, CardBody } from '~/components/ui/Card';
+import { Card, CardBody } from '~/components/ui/Card';
 import { EyeIcon, EyeOffIcon, MailIcon, LockIcon } from 'lucide-qwik';
 
 export default component$(() => {
